@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 config.bat
+
+# Environment variables
+.env
+.env.*
+!.env.example
