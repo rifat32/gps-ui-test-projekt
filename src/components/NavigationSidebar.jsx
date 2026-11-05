@@ -21,6 +21,7 @@ import {
   CloudUpload,
   Zap,
   Sliders,
+  Radio,
 } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
@@ -40,6 +41,7 @@ const NAV_ITEMS = [
   { path: "/video-settings", icon: Settings, label: "Configuration" },
   { path: "/ai-video-settings", icon: Sliders, label: "AI Video Settings" },
   { path: "/devices", icon: Cpu, label: "Device Management" },
+  { path: "/device-signals", icon: Radio, label: "Device Raw Signals (Kafka)" },
   { path: "/logs", icon: FileText, label: "System Logs" },
   { path: "/media-logs", icon: FileText, label: "Media Logs" },
   { path: "/media-gallery", icon: ImageIcon, label: "Media Gallery" },

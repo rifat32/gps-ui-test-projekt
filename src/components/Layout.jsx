@@ -194,10 +194,10 @@ export default function Layout({ theme, toggleTheme }) {
     let socketPath = "";
 
     if (serverType === "new") {
-      socketUrl = "http://77.68.52.203";
-      socketPath = "/api-backend/socket.io";
+      socketUrl = import.meta.env.VITE_BACKEND_IP || import.meta.env.VITE_API_BASE_URL;
+      socketPath = "/socket.io";
     } else {
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://54.37.225.65:8040";
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
       try {
         const parsed = new URL(apiBaseUrl);
         socketUrl = `${parsed.protocol}//${parsed.host}`;

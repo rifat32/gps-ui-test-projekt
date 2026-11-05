@@ -12,6 +12,7 @@ const Layout = lazy(() => import("./components/Layout"));
 const AiNotifications = lazy(() => import("./pages/AiNotifications"));
 const SystemAlertsLog = lazy(() => import("./pages/SystemAlertsLog"));
 const Logs = lazy(() => import("./pages/Logs"));
+const DeviceSignals = lazy(() => import("./pages/DeviceSignals"));
 const DeviceManagement = lazy(() => import("./pages/DeviceManagement"));
 const ObdPlayback = lazy(() => import("./pages/ObdPlayback"));
 const ObdStatus = lazy(() => import("./pages/ObdStatus"));
@@ -124,6 +125,10 @@ function App() {
             <Route
               path="/logs"
               element={<Logs theme={theme} toggleTheme={toggleTheme} />}
+            />
+            <Route
+              path="/device-signals"
+              element={<DeviceSignals theme={theme} toggleTheme={toggleTheme} />}
             />
 
             <Route

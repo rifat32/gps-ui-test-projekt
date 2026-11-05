@@ -300,8 +300,8 @@ export default function AiNotifications({ theme, toggleTheme }) {
 
     // 1. Dashcam Socket
     const socket = import.meta.env.VITE_SERVER_TYPE === "new"
-      ? io("http://77.68.52.203", {
-          path: "/dashcam-http/socket.io",
+      ? io(WS_URL, {
+          path: "/socket.io",
           transports: ["polling"],
         })
       : io(WS_URL);
@@ -405,10 +405,10 @@ export default function AiNotifications({ theme, toggleTheme }) {
     let apiSocketPath = "";
 
     if (serverType === "new") {
-      apiSocketUrl = "http://77.68.52.203";
-      apiSocketPath = "/api-backend/socket.io";
+      apiSocketUrl = import.meta.env.VITE_BACKEND_IP || import.meta.env.VITE_API_BASE_URL;
+      apiSocketPath = "/socket.io";
     } else {
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://54.37.225.65:8040";
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
       try {
         const parsed = new URL(apiBaseUrl);
         apiSocketUrl = `${parsed.protocol}//${parsed.host}`;

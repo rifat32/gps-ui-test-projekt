@@ -122,8 +122,8 @@ export default function ObdLive({ theme }) {
 
   useEffect(() => {
     socketRef.current = import.meta.env.VITE_SERVER_TYPE === "new"
-      ? io("http://77.68.52.203", {
-          path: "/obd-http/socket.io",
+      ? io(OBD_WS_URL, {
+          path: "/socket.io",
           transports: ["polling"],
         })
       : io(OBD_WS_URL);

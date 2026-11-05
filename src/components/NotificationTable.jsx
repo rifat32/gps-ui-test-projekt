@@ -134,7 +134,7 @@ export default function NotificationTable({
     // If the path is absolute (contains /home/), extract the relative part
     if (path.includes("downloads/")) {
       const relativePart = path.substring(path.indexOf("downloads/"));
-      const dashcamBase = BASE_URL ? BASE_URL : "http://54.37.225.65:8040";
+      const dashcamBase = BASE_URL;
       return `${dashcamBase}/${relativePart}`;
     }
 

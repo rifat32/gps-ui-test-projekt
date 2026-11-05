@@ -318,11 +318,8 @@ export default function RealTimeMap({ deviceType = "AI_DASHCAM", showRealOnly: i
     fetchInitialPositions();
 
     socketRef.current = import.meta.env.VITE_SERVER_TYPE === "new"
-      ? io("http://77.68.52.203", {
-        path:
-          deviceType === "OBD"
-            ? "/obd-http/socket.io"
-            : "/dashcam-http/socket.io",
+      ? io(currentWsUrl, {
+        path: "/socket.io",
         transports: ["polling"],
       })
       : io(currentWsUrl);
@@ -383,7 +380,7 @@ export default function RealTimeMap({ deviceType = "AI_DASHCAM", showRealOnly: i
     fetchUnreadCount();
 
     // Setup alerts socket for real-time counts
-    let alertsSocketUrl = WS_URL_DASHCAM || "http://77.68.52.203";
+    let alertsSocketUrl = WS_URL_DASHCAM;
     let alertsSocketPath = "/socket.io";
 
     // Retrieve token for authentication
