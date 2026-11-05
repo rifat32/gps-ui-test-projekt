@@ -385,7 +385,16 @@ export default function DeviceSignals({ theme }) {
             </span>
           )}
         </div>
-        <div className="logs-viewport" style={{ maxHeight: "600px", overflowY: "auto", fontFamily: "monospace" }}>
+        <div
+          className="logs-viewport dark-mode-viewer"
+          style={{
+            maxHeight: "600px",
+            overflowY: "auto",
+            fontFamily: "monospace",
+            backgroundColor: "#0d1117",
+            color: "#e6edf3",
+          }}
+        >
           {filteredSignals.length > 0 ? (
             filteredSignals.map((item, idx) => {
               const isConnect = item.action === "CONNECT";
@@ -405,14 +414,26 @@ export default function DeviceSignals({ theme }) {
                     alignItems: "flex-start",
                     gap: "10px",
                     padding: "6px 8px",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
                     fontSize: "13px",
                     lineHeight: "1.5",
                   }}
                 >
-                  <span style={{ color: "#9ca3af", whiteSpace: "nowrap" }}>
+                  <span style={{ color: "#8b949e", whiteSpace: "nowrap" }}>
                     [{item.timestamp ? item.timestamp.replace("T", " ").replace("Z", "") : ""}]
                   </span>
+                  {selectedDevice === "all" && item.deviceId && (
+                    <span
+                      style={{
+                        color: "#58a6ff",
+                        fontWeight: "600",
+                        whiteSpace: "nowrap",
+                        fontSize: "12px",
+                      }}
+                    >
+                      [{item.deviceId}]
+                    </span>
+                  )}
                   <span
                     style={{
                       backgroundColor: badgeColor,
@@ -426,7 +447,12 @@ export default function DeviceSignals({ theme }) {
                   >
                     {item.protocol || "TCP"} {item.direction} {item.action}
                   </span>
-                  <span style={{ wordBreak: "break-all", color: isConnect || isDisconnect ? "#fbbf24" : "#e5e7eb" }}>
+                  <span
+                    style={{
+                      wordBreak: "break-all",
+                      color: isConnect || isDisconnect ? "#f2cc60" : "#7ee787",
+                    }}
+                  >
                     {item.hex ? item.hex : item.description || ""}
                   </span>
                 </div>
