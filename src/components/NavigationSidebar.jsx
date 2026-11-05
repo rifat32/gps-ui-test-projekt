@@ -46,7 +46,6 @@ const NAV_ITEMS = [
   { path: "/media-logs", icon: FileText, label: "Media Logs" },
   { path: "/media-gallery", icon: ImageIcon, label: "Media Gallery" },
   { path: "/vehicle-health", icon: ShieldAlert, label: "Vehicle Health" },
-  { path: "/container-logs", icon: Terminal, label: "Container Logs" },
   { path: "/remote-access", icon: MonitorSmartphone, label: "Remote Access" },
   { path: "/remote-access-v2", icon: MonitorSmartphone, label: "Remote Access V2" },
   { path: "/device-commands", icon: Command, label: "Device Commands" },

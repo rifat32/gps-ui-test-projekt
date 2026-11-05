@@ -148,10 +148,6 @@ function App() {
               element={<VehicleHealth theme={theme} toggleTheme={toggleTheme} />}
             />
             <Route
-              path="/container-logs"
-              element={<ContainerLogs theme={theme} toggleTheme={toggleTheme} />}
-            />
-            <Route
               path="/remote-access"
               element={<RemoteAccess theme={theme} />}
             />
