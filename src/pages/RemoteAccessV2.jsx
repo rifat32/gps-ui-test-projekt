@@ -164,7 +164,7 @@ export default function RemoteAccessV2() {
                     fontSize: '13px', lineHeight: '1.6', opacity: 0.85
                 }}>
                     <strong style={{ color: '#6ee7b7' }}>Version 2 (Self-Hosted):</strong> Selecting a device and clicking{' '}
-                    <em>Generate V2 Link</em> sends a JT808 wake-up command configured with our self-hosted FRP IP (`54.37.225.65,7001`). 
+                    <em>Generate V2 Link</em> sends a JT808 wake-up command configured with our self-hosted FRP server. 
                     This bypasses cellular APN firewalls and DNS resolution failures, establishing a direct connection to our VPS.
                 </div>
 
